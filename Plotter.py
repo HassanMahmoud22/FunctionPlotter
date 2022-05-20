@@ -9,8 +9,7 @@ import Gui
 class Plotter:
     def __init__(self):
         self.validator = Validator()
-        self.equation_format = "Mathematical Equation Must be in X and uses \n(+, -, *, /, ^) operation, e.g., 5*x^3 + 2*x" \
-                               ".\nPlease Check the Equation Input."
+        self.equation_format = "The Equation Must be in X format"
 
     def __plot(self, min_value, max_value, equation):
         min_value = int(min_value)
@@ -35,8 +34,7 @@ class Plotter:
                 figure = self.__plot(min_value, max_value, equation)
                 Gui.Gui.update_graph(figure, canvas, root)
             else:
-                ms.showerror("ERROR: Invalid Input", status)
+                ms.showerror("Invalid Input", status)
         except:
             status = self.equation_format
-            ms.showerror("ERROR: Invalid Input", status)
-
+            ms.showerror("Invalid Input", status)

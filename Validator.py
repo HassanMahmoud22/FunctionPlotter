@@ -4,10 +4,10 @@ from Formatter import Formatter
 class Validator:
     def __init__(self):
         self.operations = ['+', '-', '*', '/', '^']
-        self.empty_cell = "Please Enter the Empty Cell."
-        self.must_digit = "minimum and maximum values must be digits"
-        self.max_less_min = "Min X Limit must be less than Max X Limit."
-        self.must_x = "Mathematical Equation Must be in X.\nPlease Check the Equation Input."
+        self.empty_cell = "Please Fill the Empty Cells."
+        self.max_less_min = "The Maximum Value of X must Be Greater than The Minimum Value of X"
+        self.equation_format = "The Equation Must be in X format"
+        self.must_digit = "The Values of X Must be an Integer"
 
     @staticmethod
     def __validate_ranges(self, min_value, max_value):
@@ -28,7 +28,7 @@ class Validator:
         else:
             for i in range(len(equation)):
                 if not (str(equation[i]).isdigit()) and equation[i] not in self.operations and equation[i] != 'x':
-                    return self.must_x
+                    return self.equation_format
         return True
 
     def validate(self, equation, min_value, max_value):
